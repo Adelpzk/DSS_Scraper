@@ -1,11 +1,11 @@
-import logo from '../../assets/popup/wave_logo.svg'
+import logo from '../../assets/icons/DSS_LONG_LOGO.png'
 
 export const LogoBar = () => {
     return (
         <button
             onClick={() => {
-                console.log('Clicked on logo bar, opening uwwave.ca')
-                window.open('https://uwwave.ca', '_blank')
+                console.log('Clicked on logo bar, opening FindWorks')
+                window.open('http://localhost:3000/', '_blank')
             }}
             style={{
                 width: '100%',
@@ -17,7 +17,7 @@ export const LogoBar = () => {
                 outline: 'inherit',
             }}
         >
-            <img src={logo} alt="Logo" height={24} />
+            <img src={logo} alt="Logo" height={50} />
         </button>
     )
 }

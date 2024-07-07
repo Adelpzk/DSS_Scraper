@@ -1,4 +1,4 @@
-import logo from '../../assets/waterlooworks/wave_logo_toolbar.png'
+import logo from '../../assets/icons/DSS.png'
 
 export const WaveBottomText = () => {
     return (
@@ -8,7 +8,14 @@ export const WaveBottomText = () => {
                     For advanced usage and options, open the extension popup in
                     the top right corner of your browser.
                 </h2>
-                <img src={logo} alt="Logo" />
+                <img
+                    style={{
+                        height:'20px',
+                        width:'20px'
+                    }}
+                    src={logo}
+                    alt="Logo"
+                />
             </div>
         </div>
     )
