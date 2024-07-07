@@ -29,9 +29,12 @@ import {
 } from '../common/userPrefs'
 import { TargetSearchAction } from '../common/targetSearchAction'
 
-const darkTheme = createTheme({
+const lightTheme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: 'light',
+        background: {
+            default: '#ffffff', // Set the background color to white
+        },
     },
 })
 
@@ -147,55 +150,50 @@ const MainContainer = () => {
     }, [scraperStatus])
 
     return (
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={lightTheme}>
             <div
                 className="d-flex-center"
                 style={{
-                    color: 'white',
+                    color: lightTheme.palette.text.primary,
+                    backgroundColor: lightTheme.palette.background.default,
                     flexDirection: 'column',
                 }}
             >
-                {loading ? (
-                    <div className="d-flex-center" style={{ height: '300px' }}>
-                        <LogoLoader darkMode={true} />
-                    </div>
-                ) : (
-                    <>
-                        <LogoBar />
-                        <StatusHeader completeAppStatus={completeAppStatus} />
-                        <MainDisplay
-                            scrapeButtonText={'Scrape Jobs'}
-                            onScrapeButtonClicked={onScrapeButtonClicked}
-                            jobCount={jobCount}
-                            companyCount={companyCount}
-                            jobBoard={jobBoard}
-                        />
-                        <AdvancedOptions
-                            isFirefox={isFirefox}
-                            onDataChanged={async () => {
-                                await refreshData()
-                                await trySendMessageToActiveTab('dataUpdated')
-                            }}
-                            targetSearchAction={targetSearchAction}
-                            onTargetSearchActionSelect={async newValue => {
-                                setTargetSearchAction(newValue)
-                                await setSyncStorageByKey(
-                                    UserSyncStorageKeys.SETTING_TARGET_SEARCH_ACTION,
-                                    newValue,
-                                )
-                            }}
-                            jobBoard={jobBoard}
-                            onJobBoardSelect={async newValue => {
-                                setJobBoard(newValue)
-                                await setSyncStorageByKey(
-                                    UserSyncStorageKeys.SETTING_TARGET_JOB_BOARD,
-                                    newValue,
-                                )
-                                await refreshData()
-                            }}
-                        />
-                    </>
-                )}
+                <>
+                    <LogoBar />
+                    <StatusHeader completeAppStatus={completeAppStatus} />
+                    <MainDisplay
+                        scrapeButtonText={'Scrape Jobs'}
+                        onScrapeButtonClicked={onScrapeButtonClicked}
+                        jobCount={jobCount}
+                        companyCount={companyCount}
+                        jobBoard={jobBoard}
+                    />
+                    <AdvancedOptions
+                        isFirefox={isFirefox}
+                        onDataChanged={async () => {
+                            await refreshData()
+                            await trySendMessageToActiveTab('dataUpdated')
+                        }}
+                        targetSearchAction={targetSearchAction}
+                        onTargetSearchActionSelect={async newValue => {
+                            setTargetSearchAction(newValue)
+                            await setSyncStorageByKey(
+                                UserSyncStorageKeys.SETTING_TARGET_SEARCH_ACTION,
+                                newValue,
+                            )
+                        }}
+                        jobBoard={jobBoard}
+                        onJobBoardSelect={async newValue => {
+                            setJobBoard(newValue)
+                            await setSyncStorageByKey(
+                                UserSyncStorageKeys.SETTING_TARGET_JOB_BOARD,
+                                newValue,
+                            )
+                            await refreshData()
+                        }}
+                    />
+                </>
             </div>
         </ThemeProvider>
     )

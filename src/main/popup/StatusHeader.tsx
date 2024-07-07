@@ -21,6 +21,7 @@ export const StatusHeader = (props: IStatusHeaderProps) => {
     return (
         <div
             style={{
+                color: 'white',
                 backgroundColor: status.bgColor,
                 minHeight: '4px',
                 width: '100%',
@@ -75,9 +76,9 @@ export const StatusHeader = (props: IStatusHeaderProps) => {
                         }}
                         onClick={() => {
                             console.log(
-                                'Clicked on browser jobs, opening uwwave.ca/jobs',
+                                'Clicked on browser jobs, opening http://localhost:3000/',
                             )
-                            window.open('https://uwwave.ca', '_blank')
+                            window.open('http://localhost:3000/joblist', '_blank')
                         }}
                     >
                         <h3>Browse Jobs</h3>

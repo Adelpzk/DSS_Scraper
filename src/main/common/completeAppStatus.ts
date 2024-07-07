@@ -108,7 +108,7 @@ export function computeCompleteAppStatus(
                     'Welcome! Click on Scrape Jobs below to begin setup.'
             } else {
                 statusMessage =
-                    'Thanks for installing! To finish setup, click on the Scrape Jobs button.'
+                    'Welcome to FindWork. Start scraping to get matched!'
             }
         } else {
             // Scraping, show progress
@@ -119,7 +119,7 @@ export function computeCompleteAppStatus(
             } else if (scraperStatus?.stage === ScrapeStage.finished) {
                 appState = CompleteAppState.SCRAPE_COMPLETE
                 bgColor = WaveColors.GREEN
-                statusMessage = `You're all set! You can now access jobs on UW Wave.`
+                statusMessage = `You're all set! You can now see your matches at findworks`
             } else {
                 appState = CompleteAppState.SCRAPE_IN_PROGRESS
                 bgColor = WaveColors.BLUE

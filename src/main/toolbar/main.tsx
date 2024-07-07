@@ -17,7 +17,7 @@ import { WaveBottomText } from './WaveBottomText'
 
 const darkTheme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: 'light',
     },
 })
 
@@ -71,9 +71,9 @@ const MainContainer = () => {
             window.dispatchEvent(new Event('ck_scrapeMain'))
         } else if (doneStates.includes(completeAppStatus.appState)) {
             console.log(
-                'complete app status is in a done state, opening uwwave.ca',
+                'complete app status is in a done state, opening findworks',
             )
-            window.open('https://uwwave.ca/jobs', '_blank')
+            window.open('http://localhost:3000/joblist', '_blank')
         } else {
             console.log('clicked on primary button while loading, no-op')
         }

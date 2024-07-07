@@ -354,7 +354,7 @@ class Scraper {
             ScrapeBadgeStatus.COMPLETED,
         )
 
-        window.open('https://uwwave.ca/setup', '_blank')
+        window.open('http://localhost:3000/joblist', '_blank')
     }
 
     private getUtcNowIsoString(): string {
