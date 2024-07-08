@@ -60,8 +60,5 @@
             "resources": [ "resources/html/*.html", "assets/waterlooworks/*", "assets/icons/*" ],
             "matches": [ "*://waterlooworks.uwaterloo.ca/*" ]
         }
-    ],
-    "externally_connectable": {
-        "matches": ["http://localhost:3000/*"]
-      }
+    ]
 }
