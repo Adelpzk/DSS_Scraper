@@ -21,3 +21,13 @@ addRuntimeOnInstalledListener(async function (details) {
         await createTabWithUrl(externalUrl)
     }
 })
+
+// listening to messages from exteral applications
+chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
+    if (request.action === "getCachedData") {
+      chrome.storage.local.get(null, function(items) {
+        sendResponse(items);
+      });
+      return true;
+    }
+  });
