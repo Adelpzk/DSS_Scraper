@@ -1,6 +1,8 @@
-# UW Wave Browser Extension
+# Waterloo works Scraper as a Browser Extension
 
-Browser extension for UW Wave, the ultimate companion app to WaterlooWorks.
+Browser extension to scrape waterloo works data for FindWorks, which is a course project for the Decision Support Systems Course at UW.
+This was built using the opensource code: https://github.com/uwwave/extension, which is the chrome extension for https://uwwave.ca/
+
 
 ## Getting started
 
